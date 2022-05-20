@@ -1,0 +1,82 @@
+.mainGame {
+    border: 1px solid black;
+    height: 80vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    
+}
+.player1{
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: goldenrod;
+    height: 100%;
+    align-items: center;
+}
+.tools{
+    width: 20%;
+    text-align: center;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.title{
+    width: 100%;
+    height: 5%;
+    text-align: center;
+}
+
+.header{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    background-color: black;
+    color: gold;
+    padding-right: 10px;
+    box-shadow: 10px 10px 8px 10px #888888;;
+}
+.logo{
+    width: 20px;
+    height: 100%
+}
+
+.totalScore{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    background-image: url('https://png.pngtree.com/background/20210712/original/pngtree-abstract-sport-background-black-and-gold-style-picture-image_1171982.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 250px;
+    background-size: 400px;
+}
+.currentScore{
+    width: 250px;
+    height: 100px;
+    font-size: 30px;
+    background-image: url('https://png.pngtree.com/background/20210712/original/pngtree-abstract-sport-background-black-and-gold-style-picture-image_1171982.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 400px;
+}
+.roll-dice-button{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    height: 30px;
+}
+.hold-button{
+    height: 30px;
+    margin-bottom: 50px;
+}
