@@ -103,3 +103,27 @@
 .popup{
     background-image: url("https://files.123freevectors.com/wp-content/original/157842-abstract-white-and-gold-background-design.jpg")
 }
+@media (max-width: 768px) {
+    .popup{
+        display: flex;
+        flex-direction: column;
+    }
+    .popup h1{
+        display:none;
+    }
+}
+@media (max-width:550px){
+   .header{
+    display: none;
+   }
+    .mainGame{
+        opacity: 0;
+    }
+    
+} 
+.main{
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/001/505/089/small/mobile-rotation-icon-free-vector.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
