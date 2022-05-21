@@ -72,18 +72,34 @@
     background-size: 400px;
 }
 .roll-dice-button{
-    top: 100px;
+    top: 200px;
     margin-bottom: 50px;
     height: 30px;
     position: fixed;
+}
+.roll-dice-button:hover{
+    background-color: rgb(107, 105, 105);
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
 }
 .hold-button{
     height: 30px;
     margin-bottom: 50px;
-    top: 150px;
+    top: 250px;
     position: fixed;
+}
+.hold-button:hover{
+    background-color: rgb(107, 105, 105);
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
 }
 .winnerwinner{
     text-align:center;
     margin-top: 10rem;
+}
+
+.popup{
+    transition:1s;
 }

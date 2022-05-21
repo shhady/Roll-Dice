@@ -1,11 +1,10 @@
 import React from "react";
 import Main from "./components/main";
-import MainTest from "./components/players";
-function App() {
+
+function App(props) {
   return (
     <div>
       <Main />
-      {/* <MainTest /> */}
     </div>
   );
 }

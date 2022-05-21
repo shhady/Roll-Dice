@@ -1,17 +1,17 @@
-// import "./App.css";
+
 import "./main.css";
 import React from "react";
-// import image from "./images/background.jpg";
 import Player from "./players"
+
 class Main extends React.Component {
     
     state = {player1name:"player1", player2name:"player2",
     player1: true, player2: false,
     totalScore1: 0, currentScore1:0,totalScore2: 0, currentScore2:0,
     imgNum1: 0, imgNum2:0,newCurrentScore1: 0, newCurrentScore2:0,
-    winnerShow: true, maxScore: 100, holdButtonCon: false} 
-
-
+    winnerShow: true, maxScore: 100, holdButtonCon: false, sixsix: "", showMessage: false} 
+ 
+    //-----------------------------------------------   
     resetGame = ()=>{
         this.setState({
             currentScore1: 0, currentScore2: 0,
@@ -19,13 +19,20 @@ class Main extends React.Component {
             winnerShow: true, player1name:"player1",
             player2name:"player2",  maxScore: 100, newCurrentScore1: 0, newCurrentScore2:0})
     }
+    //----------------------------------------------
+    backtoPlayAfterSix =() =>{
+        this.setState({showMessage: false})
+    }
     randomizeNumbers = ()=>{
     const rand1 = Math.ceil(Math.random()*6)
     const rand2 = Math.ceil(Math.random()*6)
     this.setState({imgNum1: `${rand1}`, imgNum2: `${rand2}`})
     this.setState({holdButtonCon: true})
-    
-//-----------------------------------
+    this.setState({showMessage: false})
+    if(rand1 === 6 && rand2 === 6){
+        this.setState({showMessage: true})
+    }
+//----------------------------------------------------
     if(this.state.player1 === true){
         this.setState(() => ({newCurrentScore1: rand1+rand2 }))
     this.setState({currentScore1: this.state.currentScore1 + rand1+ rand2}, ()=>{
@@ -49,34 +56,45 @@ class Main extends React.Component {
     })
    }
 }
+//----------------------------------------------------
    onClickHold =() =>{
     this.setState({player1: !this.state.player1 , player2: !this.state.player2})
     this.setState({newCurrentScore2: 0})
     this.setState({newCurrentScore1: 0})
     this.setState({holdButtonCon: false})
    }
+   //--------------------------------------------------
   onInputChange = (event)=>{
       this.setState({maxScore: event.target.value})
   }
+  //--------------------------------------------
+
+
+
     render(){
   return (
     <div className="main">
-        <div className="header">
-        <div className="logo" >
+        {/* <div>
+        <label>Player 1 name:</label><input type="text" onChange={this.onInputChangeName}></input>
+        <label>Player 2 name:</label><input type="text" onChange={this.onInputChangeName2}></input>
+      </div> */}
+       <div className="header">
+            <div className="logo" >
             <img src="https://everynationnj.org/wp-content/uploads/2019/11/ennj-artwork-1080x675.png" alt="logo" style={{width:80}}></img>
-        </div>
-        <div className="title"><img src={require('./images/titlePic.png')} alt="title" style={{width:300}}/></div>
-        <div><button className="reset" onClick={this.resetGame}>Reset Game</button></div>
+            </div>
+            <div className="title"><img src={require('./images/titlePic.png')} alt="title" style={{width:300}}/></div>
+            <div><button className="reset" onClick={this.resetGame}>Reset Game</button></div>
         </div>
         {this.state.winnerShow && <div className="mainGame">
         <Player name={this.state.player1name} totalScore={this.state.totalScore1} currentScore={this.state.player1 && this.state.newCurrentScore1}/>
         <div className="tools">
-        <img src={require(`./images/pic-${this.state.imgNum1}.png`)} alt="dice"style={{width:50, position: 'fixed', top:"200px"}}/>
-        <img src={require(`./images/pic-${this.state.imgNum2}.png`)} alt="dice" style={{width:50, position: 'fixed', top:"250px"}}/>
+        <img src={require(`./images/pic-${this.state.imgNum1}.png`)} alt="dice" className="image"style={{width:50, position: 'fixed', top:"300px"}}/>
+        <img src={require(`./images/pic-${this.state.imgNum2}.png`)} alt="dice" className="image" style={{width:50, position: 'fixed', top:"350px"}}/>
         <button className="roll-dice-button" onClick={this.randomizeNumbers}>Roll The Dice</button>
          { this.state.holdButtonCon && <button className="hold-button" onClick={this.onClickHold}>HOLD</button>}
-        <label style={{color: "white" , position: 'fixed', top:"350px"}}>MAX SCORE</label>
-        <input type = 'number' className="input-button" onChange={this.onInputChange} style={{width: 100, position: 'fixed', top:"370px"}}></input>
+        <label style={{color: "white" , position: 'fixed', top:"100px"}}>MAX SCORE</label>
+        <input type = 'number' className="input-button" onChange={this.onInputChange} style={{width: 100, position: 'fixed', top:"150px"}}></input>
+        { this.state.showMessage && <div className="popup" style={{color: "black", height: 300, borderRadius:"20%", fontSize: "30px", backgroundColor: "goldenrod",position: 'fixed', top:"150px" }}><img src="https://c.tenor.com/VpQP6Yhbc8gAAAAM/will-ferrell-amy-poehler.gif" alt="gif"></img><h1>Nice! 12 Points Added</h1><button onClick={this.backtoPlayAfterSix}>continue</button></div>}
         </div>
         <Player className="player1" name={this.state.player2name} totalScore={this.state.totalScore2} currentScore={this.state.player2 && this.state.newCurrentScore2}/>
         </div>}
