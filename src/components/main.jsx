@@ -9,7 +9,7 @@ class Main extends React.Component {
     player1: true, player2: false,
     totalScore1: 0, currentScore1:0,totalScore2: 0, currentScore2:0,
     imgNum1: 0, imgNum2:0,newCurrentScore1: 0, newCurrentScore2:0,
-    winnerShow: true, maxScore: 100, holdButtonCon: false, showMessage: true} 
+    winnerShow: true, maxScore: 100, holdButtonCon: false, showMessage: false} 
  
     //-----------------------------------------------   
     resetGame = ()=>{
