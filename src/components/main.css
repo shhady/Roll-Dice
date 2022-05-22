@@ -103,6 +103,10 @@
 .popup{
     background-image: url("https://files.123freevectors.com/wp-content/original/157842-abstract-white-and-gold-background-design.jpg")
 }
+.popup button{
+    height: 20px;
+    margin-left: 20px;
+}
 @media (max-width: 768px) {
     .popup{
         display: flex;

@@ -9,7 +9,7 @@ class Main extends React.Component {
     player1: true, player2: false,
     totalScore1: 0, currentScore1:0,totalScore2: 0, currentScore2:0,
     imgNum1: 0, imgNum2:0,newCurrentScore1: 0, newCurrentScore2:0,
-    winnerShow: true, maxScore: 100, holdButtonCon: false, sixsix: "", showMessage: false} 
+    winnerShow: true, maxScore: 100, holdButtonCon: false, showMessage: true} 
  
     //-----------------------------------------------   
     resetGame = ()=>{
@@ -94,7 +94,7 @@ class Main extends React.Component {
          { this.state.holdButtonCon && <button className="hold-button" onClick={this.onClickHold}>HOLD</button>}
         <label className="label" style={{color: "white" , position: 'fixed', top:"80px"}}>MAX SCORE</label>
         <input type = 'number' className="input-button" onChange={this.onInputChange} style={{width: 100, position: 'fixed', top:"100px"}}></input>
-        { this.state.showMessage && <div className="popup" style={{color: "black", height: 300, borderRadius:"20%", fontSize: "30px",position: 'fixed', top:"50px" }}><img src="https://c.tenor.com/VpQP6Yhbc8gAAAAM/will-ferrell-amy-poehler.gif" alt="gif"></img><h1>Nice! 12 Points Added</h1><button onClick={this.backtoPlayAfterSix}>continue</button></div>}
+        { this.state.showMessage && <div className="popup" style={{color: "black", height: 300, borderRadius:"20%", fontSize: "30px",position: 'fixed', top:"50px" }}><img src="https://c.tenor.com/VpQP6Yhbc8gAAAAM/will-ferrell-amy-poehler.gif" alt="gif"></img><button onClick={this.backtoPlayAfterSix}>continue</button><h1>Nice! 12 Points Added</h1></div>}
         </div>
         <Player className="player1" name={this.state.player2name} totalScore={this.state.totalScore2} currentScore={this.state.player2 && this.state.newCurrentScore2}/>
         </div>}
