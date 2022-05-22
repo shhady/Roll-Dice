@@ -88,12 +88,12 @@ class Main extends React.Component {
         {this.state.winnerShow && <div className="mainGame">
         <Player name={this.state.player1name} totalScore={this.state.totalScore1} currentScore={this.state.player1 && this.state.newCurrentScore1}/>
         <div className="tools">
-        <img src={require(`./images/pic-${this.state.imgNum1}.png`)} alt="dice" className="image"style={{width:50, position: 'fixed', top:"300px"}}/>
-        <img src={require(`./images/pic-${this.state.imgNum2}.png`)} alt="dice" className="image" style={{width:50, position: 'fixed', top:"350px"}}/>
+        <img src={require(`./images/pic-${this.state.imgNum1}.png`)} alt="dice" className="image"style={{width:50, position: 'fixed', top:"230px"}}/>
+        <img src={require(`./images/pic-${this.state.imgNum2}.png`)} alt="dice" className="image" style={{width:50, position: 'fixed', top:"280px"}}/>
         <button className="roll-dice-button" onClick={this.randomizeNumbers}>Roll The Dice</button>
          { this.state.holdButtonCon && <button className="hold-button" onClick={this.onClickHold}>HOLD</button>}
-        <label style={{color: "white" , position: 'fixed', top:"100px"}}>MAX SCORE</label>
-        <input type = 'number' className="input-button" onChange={this.onInputChange} style={{width: 100, position: 'fixed', top:"150px"}}></input>
+        <label className="label" style={{color: "white" , position: 'fixed', top:"80px"}}>MAX SCORE</label>
+        <input type = 'number' className="input-button" onChange={this.onInputChange} style={{width: 100, position: 'fixed', top:"100px"}}></input>
         { this.state.showMessage && <div className="popup" style={{color: "black", height: 300, borderRadius:"20%", fontSize: "30px",position: 'fixed', top:"50px" }}><img src="https://c.tenor.com/VpQP6Yhbc8gAAAAM/will-ferrell-amy-poehler.gif" alt="gif"></img><h1>Nice! 12 Points Added</h1><button onClick={this.backtoPlayAfterSix}>continue</button></div>}
         </div>
         <Player className="player1" name={this.state.player2name} totalScore={this.state.totalScore2} currentScore={this.state.player2 && this.state.newCurrentScore2}/>

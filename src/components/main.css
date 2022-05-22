@@ -72,7 +72,7 @@
     background-size: 400px;
 }
 .roll-dice-button{
-    top: 200px;
+    top: 130px;
     margin-bottom: 50px;
     height: 30px;
     position: fixed;
@@ -86,7 +86,7 @@
 .hold-button{
     height: 30px;
     margin-bottom: 50px;
-    top: 250px;
+    top: 170px;
     position: fixed;
 }
 .hold-button:hover{
@@ -119,11 +119,12 @@
     .mainGame{
         opacity: 0;
     }
+    .main{
+        background-image: url("https://static.vecteezy.com/system/resources/thumbnails/001/505/089/small/mobile-rotation-icon-free-vector.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
     
 } 
-.main{
-    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/001/505/089/small/mobile-rotation-icon-free-vector.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
+
